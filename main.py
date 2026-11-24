@@ -31,6 +31,8 @@ def main():
         sys.exit("entry must be exactly one line")
     if not 1 <= len(text) <= 200:
         sys.exit("entry must be 1-200 characters, got %d" % len(text))
+    if "  " in text:
+        sys.exit("entry must not contain double spaces")
     if "still scrolling" not in text:
         # The joke's hook: the owner keeps scrolling while the phone dies.
         sys.exit("entry must keep the scrolling hook")
